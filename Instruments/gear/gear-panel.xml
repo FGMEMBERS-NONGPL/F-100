@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+
+<PropertyList> 
+
+<path>gear-panel.ac</path>
+
+<!--***lighting***-->
+
+<animation>
+	<type>material</type>
+	<object-name>face</object-name>
+	<emission>
+		<red>1.0</red>
+		<green>0.25</green>
+		<blue>0.25</blue>
+		<factor-prop>controls/lighting/panel-norm</factor-prop>
+	</emission> 
+</animation> 
+
+  <!-- Emergency Jettison button -->
+
+<animation>
+  <type>pick</type>
+  <object-name>emerg-jett</object-name>
+  <visible>true</visible>
+  <action>
+   <name>ext-fuel-jett</name>
+   <button>0</button>
+   <binding>
+    <command>property-assign</command>
+    <property>fdm/jsbsim/systems/armament/release</property>
+    <value>1</value>
+   </binding>
+  </action>
+</animation>
+
+<!--***handle light***-->
+
+	<animation>
+		<type>select</type>
+		<object-name>head-off</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>/gear/gear[0]/position-norm</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>/gear/gear[0]/position-norm</property>
+					<value>1</value>
+				</equals>
+			</or>
+    	</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>head-on</object-name>
+		<condition>
+			<and>
+				<not-equals>
+					<property>/gear/gear[0]/position-norm</property>
+					<value>0</value>
+				</not-equals>
+				<not-equals>
+					<property>/gear/gear[0]/position-norm</property>
+					<value>1.0</value>
+				</not-equals>
+			</and>
+    	</condition>
+	</animation>
+
+<!--***handle rotation***-->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>handle</object-name>
+		<property>fdm/jsbsim/gear/gear-cmd-norm</property>
+		<interpolation>
+			<entry><ind>1</ind><dep>-30</dep></entry>
+			<entry><ind>0</ind><dep>30</dep></entry> 
+		</interpolation>  
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.0094</y-m>
+			<z-m>-0.0071</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!--***Nose Gear***-->
+
+  <animation>
+    <type>select</type>
+    <object-name>nose-on</object-name>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+	   <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>nose-off</object-name>
+    <condition>
+	<or>
+	<equals>
+        <property>gear/gear[0]/position-norm</property>
+	    <value>0</value>
+	</equals>
+	<not-equals>
+        <property>gear/gear[0]/position-norm</property>
+	    <value>1</value>
+	</not-equals>
+	</or>
+    </condition>
+  </animation>
+
+<!--***Right Gear***-->
+
+  <animation>
+    <type>select</type>
+    <object-name>right-on</object-name>
+    <condition>
+      <equals>
+        <property>gear/gear[2]/position-norm</property>
+	   <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>right-off</object-name>
+    <condition>
+	<or>
+	<equals>
+        <property>gear/gear[2]/position-norm</property>
+	    <value>0</value>
+	</equals>
+	<not-equals>
+        <property>gear/gear[2]/position-norm</property>
+	    <value>1</value>
+	</not-equals>
+	</or>
+    </condition>
+  </animation>
+
+<!--***Left Gear***-->
+
+  <animation>
+    <type>select</type>
+    <object-name>left-on</object-name>
+    <condition>
+      <equals>
+        <property>gear/gear[1]/position-norm</property>
+	   <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>left-off</object-name>
+    <condition>
+	<or>
+	<equals>
+        <property>gear/gear[1]/position-norm</property>
+	    <value>0</value>
+	</equals>
+	<not-equals>
+        <property>gear/gear[1]/position-norm</property>
+	    <value>1</value>
+	</not-equals>
+	</or>
+    </condition>
+  </animation>
+
+<!--***LoD***-->
+
+	<animation> 
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

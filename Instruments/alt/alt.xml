@@ -1,0 +1,120 @@
+<?xml version="1.1"?>
+
+<!-- F-100D altimeter -->
+
+<PropertyList>
+
+<path>alt.ac</path>
+
+<!--***lighting***-->
+
+<animation>
+	<type>material</type>
+	<object-name>indicator</object-name>
+	<emission>
+		<red>1.0</red>
+		<green>0.25</green>
+		<blue>0.25</blue>
+		<factor-prop>controls/lighting/panel-norm</factor-prop>
+	</emission> 
+</animation> 
+
+<!--***rotations***-->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>alt-warning</object-name>
+		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>10000</ind><dep>61</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+ 	</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>needle1</object-name>
+  <property>instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.36</factor>  
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle2</object-name>
+  <property>instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.036</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle3</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.0036</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>pressure-dial</object-name>
+  <property>/instrumentation/altimeter/setting-inhg</property>
+  <interpolation>
+   <entry><ind>28</ind><dep>-200</dep></entry>
+   <entry><ind>30</ind><dep>0</dep></entry>
+   <entry><ind>31.3</ind><dep>130</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+ <!-- *** LoD *** -->
+
+<animation>
+	<type>range</type>
+	<min-m>0</min-m>
+	<max-m>5</max-m>
+</animation>
+
+</PropertyList>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!--F-100D master caution light-->
+
+<PropertyList>
+
+<path>mast-caut-light.ac</path>
+
+<!-- *** LoD *** -->
+
+<animation>
+	<type>range</type>
+	<min-m>0</min-m>
+	<max-m>5</max-m>
+</animation>
+
+</PropertyList>
