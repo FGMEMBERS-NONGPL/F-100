@@ -6,7 +6,7 @@ kids 1
 OBJECT poly
 name "probe"
 loc -2.35716 -0.144575 -1.70291
-texture "C:/Program Files/FlightGear/data/Aircraft/F-100/Models/fuselage.png"
+texture "Aircraft/F-100/Models/fuselage.png"
 crease 45.000000
 numvert 128
 0.558259 -0.317657 0.0320656

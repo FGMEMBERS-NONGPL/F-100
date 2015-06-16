@@ -9,7 +9,7 @@ kids 2
 OBJECT poly
 name "cylinder"
 loc -2.61112 -0.25832 1.12727
-texture "C:/Program Files/FlightGear/data/Aircraft/F-100/Models/fuselage.png"
+texture "Aircraft/F-100/Models/fuselage.png"
 crease 45.000000
 numvert 228
 0.794205 0.0555364 -1.93852
@@ -2933,7 +2933,7 @@ kids 0
 OBJECT poly
 name "fins"
 loc 2.61112 0.25832 -1.12727
-texture "C:/Program Files/FlightGear/data/Aircraft/F-100/Models/fuselage.png"
+texture "Aircraft/F-100/Models/fuselage.png"
 crease 45.000000
 numvert 48
 0.307301 0.348437 0.326479
